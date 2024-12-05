@@ -1,0 +1,122 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Filter Container */
+.filter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    flex-wrap: wrap; /* Ensures wrapping on smaller screens */
+}
+
+/* Search Container */
+.search-container {
+    display: flex;
+    flex-wrap: wrap; /* Wrap input and button on small screens */
+    margin-bottom: 10px; /* Add spacing for wrapping */
+}
+
+#search-input {
+    width: 200px;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+#search-button {
+    padding: 5px 10px;
+    background-color: orange;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Category Container */
+.category-container {
+    display: flex;
+    flex-wrap: wrap; /* Ensures wrapping on smaller screens */
+    gap: 10px; /* Add spacing between buttons */
+}
+
+.category-button {
+    padding: 5px 10px;
+    margin-right: 10px;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.category-button.active {
+    background-color: orange;
+}
+
+/* Product Item */
+.product-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 20px;
+    flex: 1 1 calc(33.333% - 40px); /* Flex items for a grid layout */
+    max-width: calc(33.333% - 40px);
+    box-sizing: border-box;
+}
+
+/* Product List */
+#product-list {
+    display: flex;
+    flex-wrap: wrap; /* Enables wrapping of items */
+    gap: 20px; /* Add spacing between items */
+    padding: 20px;
+    justify-content: center; /* Center items on smaller screens */
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .product-item {
+        flex: 1 1 calc(50% - 40px); /* Adjust for tablets */
+        max-width: calc(50% - 40px);
+    }
+}
+
+@media (max-width: 768px) {
+    .filter-container {
+        flex-direction: column; /* Stack filters vertically */
+        align-items: flex-start;
+    }
+
+    .search-container {
+        margin-bottom: 20px;
+    }
+
+    .category-container {
+        justify-content: center;
+    }
+
+    .product-item {
+        flex: 1 1 calc(100% - 40px); /* Full width for smaller screens */
+        max-width: calc(100% - 40px);
+    }
+}
+
+@media (max-width: 480px) {
+    #search-input {
+        width: 100%; /* Full width input field on very small screens */
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    #search-button {
+        width: 100%; /* Full width button on very small screens */
+    }
+
+    .category-container {
+        flex-direction: column; /* Stack category buttons vertically */
+        gap: 10px;
+    }
+}
